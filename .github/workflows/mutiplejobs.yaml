@@ -18,6 +18,7 @@ jobs:
 
 
   test_job:   # <-- Job Two
+    needs: build_job    
     runs-on: ubuntu-latest
     steps:
       - name: Sleep for 10 seconds
@@ -29,6 +30,7 @@ jobs:
 
 
   deploy_job:
+    needs : [build_job,test_job]   # <-- this way you can  use multiple job for one jobs
     runs-on: ubuntu-latest
     steps:
         - name: Read File
