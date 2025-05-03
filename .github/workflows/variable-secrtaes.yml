@@ -59,8 +59,8 @@
 name: Workflow Level Env Demo
 
 # 🌍 Workflow-level environment variable
-env:
-  SITE_NAME: "Workflow World"
+# env:
+#   SITE_NAME: "Workflow World"
 
 on:
   push:
@@ -71,4 +71,4 @@ jobs:
     steps:
       - name: Show SITE_NAME from workflow
         run: |
-         echo "Workflow Level: $SITE_NAME"
+         echo "Workflow Level: ${{ secrets.SITE_NAME }}"
