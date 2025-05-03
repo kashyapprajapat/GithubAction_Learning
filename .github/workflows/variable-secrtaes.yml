@@ -1,0 +1,28 @@
+# ============================================================================================================ # 
+#
+#        In Github action Environemt variabels are stored at three different lavel
+#
+#     1. Step Level
+#     2. Job-Level
+#     3. Workflow-Level
+#
+#
+# ============================================================================================================ # 
+
+#Example 1: Step-Level Environment Variable
+name: Step Level Env Demo
+
+on:
+  push:
+
+jobs:
+  show-step-env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step with local env variable
+        env:
+          AUTHOR: Step-Level User
+          
+        run: |
+          echo "Step Level: $AUTHOR"
