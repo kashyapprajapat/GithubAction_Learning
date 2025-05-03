@@ -7,6 +7,13 @@ A Learning Repository of GithubAction.
 
 GitHub Actions is a workflow automation platform integrated directly into GitHub repositories. It enables developers to automate software workflows including building, testing, and deploying applications without requiring external CI/CD systems.
 
+---
+
+# Github CICD
+![Cicd](./cicd.png)
+
+---
+
 ## Core Concepts
 
 ### Workflows
@@ -16,6 +23,9 @@ Workflows are automated procedures defined in YAML files stored in your reposito
 - Are composed of one or more jobs
 - Are triggered by specific events in your GitHub repository
 - Can be scheduled or manually triggered
+
+# Github Action workFlow
+![workflow](./Workflow.png)
 
 ### Events
 
@@ -34,6 +44,12 @@ Jobs are sets of steps executed on the same runner. Key characteristics:
 - Can be configured to run sequentially with dependencies
 - Each job runs in a fresh instance of the virtual environment
 - Jobs can be conditional based on specific criteria
+
+# Job depend 
+## Needs keyword
+![JobDepend](./needskeywordfordependoneachjob.png)
+## Upload & Download Artificate
+![JobDepend](./upload&downloadartifact.png)
 
 ### Runners
 
@@ -70,6 +86,10 @@ Environment variables provide a way to:
 - Pass data between workflow steps
 - Reference repository information
 - Access secrets safely
+
+| **Workflow Level** | **Job Level** | **Step Level** |
+|--------------------|---------------|----------------|
+| ![Workflow Level](./wokflowlevelenv.png) | ![Job Level](./joblevelenv.png) | ![Step Level](./steplelevelenv.png) |
 
 ### Secrets
 
@@ -171,4 +191,4 @@ By understanding these theoretical aspects of GitHub Actions, you can design eff
 
 2. then create the anyName.yaml file inside the workflows.
 
---> You can get all the cations from the github marketplace
+--> You can get all the actions from the github marketplace
