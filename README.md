@@ -170,3 +170,5 @@ By understanding these theoretical aspects of GitHub Actions, you can design eff
 1. craete the folder .github/workflows
 
 2. then create the anyName.yaml file inside the workflows.
+
+--> You can get all the cations from the github marketplace
