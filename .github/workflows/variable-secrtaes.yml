@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Step with local env variable
         env:
-          AUTHOR: Step-Level User
+          AUTHOR: Kashyap Prajapati
           
         run: |
           echo "Step Level: $AUTHOR"
