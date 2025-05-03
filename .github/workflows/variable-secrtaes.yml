@@ -10,19 +10,41 @@
 # ============================================================================================================ # 
 
 #Example 1: Step-Level Environment Variable
-name: Step Level Env Demo
+
+# name: Step Level Env Demo
+
+# on:
+#   push:
+
+# jobs:
+#   show-step-env:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Step with local env variable
+#         env:
+#           AUTHOR: Kashyap Prajapati
+          
+#         run: |
+#           echo "Step Level: $AUTHOR"
+
+
+#Example 2: Job-Level Environment Variable
+name: Job Level Env Demo
 
 on:
   push:
 
 jobs:
-  show-step-env:
+  show-job-env:
     runs-on: ubuntu-latest
 
+    # 📦 Job-level environment variable
+    env:
+      API_KEY: "Kp#14-job-level-secret-key"
+
     steps:
-      - name: Step with local env variable
-        env:
-          AUTHOR: Kashyap Prajapati
-          
+      - name: Show API_KEY from job level
+
         run: |
-          echo "Step Level: $AUTHOR"
+         echo "Job Level: $API_KEY"
