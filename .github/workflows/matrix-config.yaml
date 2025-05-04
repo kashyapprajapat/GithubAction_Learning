@@ -1,24 +1,22 @@
 name: Matrix Configuration
 
 on:
-    push:
-    workflow_dispatch:   # <-- Using this we can manually run this workflow
+  push:
+  workflow_dispatch:   # <-- Allows manual execution of the workflow
 
-# ⚠️📎 Docker is avialabel by default in the virtual machine of the Github.
-    
 jobs:
-    deploy:
-        strategy:
-          matrix:
-            os: [ubuntu-latest, ubuntu-20.04,windows-latest]   # <--  using this way you can take multiple os 
-            images : [hello-world, alpine]
-        runs-on: ${{ matrix.os }}    #<-- pass that os arrray here
-        steps:
-            - name: Echo Docker Details
-              run : docker info
-            
-            - name : Run Images on ${{ matrix.os}}
-              run : docker run ${{ matrix.images}}  #<-- Passs that images  , here 6 jibs running in parrallel
+  deploy:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-20.04, windows-latest]   # Multiple OS versions
+        image: [hello-world, alpine]                         # Docker images
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Echo Docker Details
+        run: docker info
+
+      - name: Run Docker image on ${{ matrix.os }}
+        run: docker run ${{ matrix.image }}
 
     # deploy-on-windows:
     #     runs-on: windows-latest
