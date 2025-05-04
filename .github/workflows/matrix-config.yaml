@@ -2,7 +2,7 @@ name: Matrix Configuration
 
 on:
     push:
-    workflow_dispatch:
+    workflow_dispatch:   # <-- Using this we can manually run this workflow
 
 # ⚠️📎 Docker is by default in the virtual machine of the Github.
     
