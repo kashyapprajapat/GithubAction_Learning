@@ -1,0 +1,27 @@
+name: Matrix Configuration
+
+on:
+    push:
+    workflow_dispatch:
+
+# ⚠️📎 Docker is by default in the virtual machine of the Github.
+    
+jobs:
+    deploy-on-ubuntu:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo Docker Details
+              run : docker info
+            
+            - name : Run Images
+              run : docker run hello-world
+
+    deploy-on-windows:
+        runs-on: windows-latest
+        steps:
+            - name: Echo Docker Details
+              run : docker info
+            
+            - name : Run Images
+              run : docker run hello-world
+
