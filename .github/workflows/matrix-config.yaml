@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       max-parallel: 2       # <-- using this we tell the numberof jobs running int he parrallel
       matrix:
-        os: [ubuntu-latest, ubuntu-20.04, windows-latest]   # Multiple OS versions
+        os: [ubuntu-latest, Ubuntu 24.04, windows-latest]   # Multiple OS versions
         image: [hello-world, alpine]   # Docker images
         exclude:                       # using this it will not run the alpine image inthe windows
           - image : alpine
