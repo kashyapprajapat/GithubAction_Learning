@@ -4,24 +4,28 @@ on:
     push:
     workflow_dispatch:   # <-- Using this we can manually run this workflow
 
-# ⚠️📎 Docker is by default in the virtual machine of the Github.
+# ⚠️📎 Docker is avialabel by default in the virtual machine of the Github.
     
 jobs:
-    deploy-on-ubuntu:
-        runs-on: ubuntu-latest
+    deploy:
+        strategy:
+          matrix:
+            os: [ubuntu-latest, ubuntu-20.04,windows-latest]   # <--  using this way you can take multiple os 
+            images : [hello-world,alpine]
+        runs-on: ${{ matrix.os }}    #<-- pass that os arrray here
         steps:
             - name: Echo Docker Details
               run : docker info
             
-            - name : Run Images
-              run : docker run hello-world
+            - name : Run Images on ${{ matrix.os}}
+              run : docker run ${{ matrix.images}}  #<-- Passs that images  , here 6 jibs running in parrallel
 
-    deploy-on-windows:
-        runs-on: windows-latest
-        steps:
-            - name: Echo Docker Details
-              run : docker info
+    # deploy-on-windows:
+    #     runs-on: windows-latest
+    #     steps:
+    #         - name: Echo Docker Details
+    #           run : docker info
             
-            - name : Run Images
-              run : docker run hello-world
+    #         - name : Run Images
+    #           run : docker run hello-world
 
