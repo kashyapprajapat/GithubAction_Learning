@@ -180,6 +180,14 @@ GitHub Actions integrates seamlessly with:
 By understanding these theoretical aspects of GitHub Actions, you can design effective automation strategies for your development workflows without getting lost in implementation details.
 
 
+## Job Cocncurrancy
+
+Means that in whcih at same time multiple workflow running so what is the concurrnacy so for that we do 
+```bash
+concurrency:
+    group: Production-deployment
+    cancel-in-progress: true
+```
 ----
 ---
 
