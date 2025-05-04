@@ -8,7 +8,7 @@ jobs:
   deploy:
     strategy:
       fail-fast: false
-      max-parallel: 2       # <-- using this we tell the numberof jobs running int he parrallel
+      max-parallel: 3       # <-- using this we tell the numberof jobs running int he parrallel
       matrix:
         os: [ubuntu-latest, Ubuntu 24.04, windows-latest]   # Multiple OS versions
         image: [hello-world, alpine]   # Docker images
