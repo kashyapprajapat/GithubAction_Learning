@@ -202,3 +202,10 @@ concurrency:
 2. then create the anyName.yaml file inside the workflows.
 
 --> You can get all the actions from the github marketplace
+
+
+## Notes 📒
+![page](./notes/note1.jpeg)
+![page](./notes/note2.jpeg)
+![page](./notes/note3.jpeg)
+![page](./notes/note4.jpeg)
