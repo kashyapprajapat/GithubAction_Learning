@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:'/GithubAction_Learning/',
+  base:'/GithubAction_Learning/react-cicd/',
   plugins: [react()],
   server:{
     open:true,
