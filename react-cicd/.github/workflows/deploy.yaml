@@ -5,6 +5,9 @@ on:
     branches:
         - main  # <- Main Branch
 
+defaults:
+  run:
+    working-directory: react-cicd
 
 jobs:
   build-and-test:
