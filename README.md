@@ -209,3 +209,74 @@ concurrency:
 ![page](./notes/note2.jpeg)
 ![page](./notes/note3.jpeg)
 ![page](./notes/note4.jpeg)
+
+
+------------------------------------------------------------
+
+GitHub Actions has several limitations to consider when planning workflows. Here are some key ones:
+
+### 1. **Execution Time Limit**
+
+* **Maximum runtime for a job**: 72 hours.
+* **Maximum runtime for a workflow**: 72 hours.
+* If the job or workflow exceeds this limit, it will be automatically canceled.
+
+### 2. **Usage Limits (Free Tier)**
+
+* For **public repositories**, GitHub Actions is free with unlimited minutes.
+* For **private repositories**:
+
+  * **Free plan**: 2,000 minutes/month for private repositories.
+  * **Paid plans**: The number of minutes depends on the plan.
+  * After exceeding the limit, you'll need to purchase more minutes.
+
+### 3. **Concurrent Jobs Limit**
+
+* **Maximum jobs that can run concurrently**:
+
+  * For **free plan**: 20 concurrent jobs.
+  * For **paid plan**: 50 concurrent jobs.
+* This may limit large-scale parallel testing or deployments.
+
+### 4. **Artifact Storage Limits**
+
+* Maximum size of a single artifact: **5 GB**.
+* Maximum total storage for artifacts per repository: **2 GB**.
+* After this limit, older artifacts may be deleted automatically.
+
+### 5. **Container and Virtual Machine Resources**
+
+* **Memory**: 7 GB for virtual machines.
+* **CPU**: 2 CPUs for virtual machines, 4 CPUs for self-hosted runners.
+* **Disk space**: 14 GB of storage on GitHub-hosted runners.
+
+### 6. **API Rate Limiting**
+
+* GitHub API has rate limits that can affect workflows. These limits are shared across the entire GitHub account and are:
+
+  * **5000 requests per hour** for authenticated requests.
+  * **60 requests per hour** for unauthenticated requests.
+
+### 7. **Secrets and Environment Variables**
+
+* Secrets are limited to **64 KB** in total.
+* There are **50 environment variables** allowed per job.
+
+### 8. **Runner Limitations**
+
+* **GitHub-hosted runners** come with predefined software and configurations. They may not have the exact setup or dependencies you need.
+* For more customization, you may need to use **self-hosted runners**.
+
+### 9. **Matrix Strategy Limitations**
+
+* The maximum number of combinations in a matrix is **256**. For example, if you are testing across multiple Node.js versions and OS combinations, it’s limited by the number of items in the matrix.
+
+### 10. **Limited Support for Windows Containers**
+
+* Windows containers on GitHub Actions are still in preview and may have limitations regarding specific tools or configurations.
+
+### 11. **File Size Limits for Workflow Files**
+
+* Workflow files must be **less than 1 MB**. If they exceed this size, you'll need to refactor or split your workflows.
+
+These are some of the major limitations you might encounter when using GitHub Actions, but it’s always a good idea to keep an eye on any updates GitHub might provide regarding limits.
